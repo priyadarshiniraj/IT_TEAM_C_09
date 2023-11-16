@@ -164,7 +164,10 @@ class _HomePageState extends State<HomePage> {
 
     //   Navigator.push(
     //     context,
-    //     MaterialPageRoute(builder: (context) => TranslateText(sentence)),
+    //     MaterialPageRoute(builder: (context) => TranslateText(se
+    -.
+    .
+    ntence)),
     //   );
 
     // } else if (lastWords.compareTo("video call") == 0) {
