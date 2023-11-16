@@ -128,7 +128,7 @@ class _AboutPageState extends State<AboutPage> {
                     Container(
                       padding: const EdgeInsets.all(4),
                       child: Text(
-                        "Vijeth P H, Sathya M, Shashank Ashok Gadavi & Sagar V",
+                        "Shivani N , Priyadharshini P & Zeen Sulthana R",
                         style: TextStyle(fontSize: 18, color: Colors.amber),
                       ),
                       width: double.infinity,

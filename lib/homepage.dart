@@ -9,7 +9,7 @@ import 'dart:io';
 import 'dart:math';
 import 'OCR.dart';
 import 'about_page.dart';
-import 'textsummarize.dart';
+// import 'textsummarize.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +23,8 @@ import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
 import 'package:agora_rtc_engine/rtc_engine.dart';
 
-import 'VideoCall.dart';
-import 'translation.dart';
+// import 'VideoCall.dart';
+// import 'translation.dart';
 import 'objectdetection.dart';
 import 'tts.dart';
 import 'face_recognition.dart';
@@ -159,37 +159,39 @@ class _HomePageState extends State<HomePage> {
       } else {
         tts.speak("Sorry. Could not send your location.");
       }
-    } else if (lastWords.startsWith("translate")) {
-      String sentence = lastWords;
+    // } else if (lastWords.startsWith("translate")) {
+    //   String sentence = lastWords;
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => TranslateText(sentence)),
-      );
-    } else if (lastWords.compareTo("video call") == 0) {
-      var url = Uri.parse('https://insightbackend.herokuapp.com/token');
-      var response = await http.get(
-        url,
-        headers: {
-          'Authorization':
-              "Token APP_AUTH_TOKEN"  
-          },
-      );
-      if (response.statusCode == 200) {
-        String token = response.body;
-        // await for camera and mic permissions before pushing video page
-        await _handleCameraAndMic(Permission.camera);
-        await _handleCameraAndMic(Permission.microphone);
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  VideoCall(channelName: "insight", role: _role, token: token)),
-        );
-      } else {
-        tts.speak("Sorry. Could not make a video call.");
-      }
-    } else {
+    //   Navigator.push(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => TranslateText(sentence)),
+    //   );
+
+    // } else if (lastWords.compareTo("video call") == 0) {
+    //   var url = Uri.parse('https://insightbackend.herokuapp.com/token');
+    //   var response = await http.get(
+    //     url,
+    //     headers: {
+    //       'Authorization':
+    //           "Token APP_AUTH_TOKEN"  
+    //       },
+    //   );
+    //   if (response.statusCode == 200) {
+    //     String token = response.body;
+    //     // await for camera and mic permissions before pushing video page
+    //     await _handleCameraAndMic(Permission.camera);
+    //     await _handleCameraAndMic(Permission.microphone);
+    //     Navigator.push(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (context) =>
+    //               VideoCall(channelName: "insight", role: _role, token: token)),
+    //     );
+    //   } else {
+    //     tts.speak("Sorry. Could not make a video call.");
+    //   }
+    // } 
+    else {
       tts.speak("Please provide a valid command");
     }
   }
