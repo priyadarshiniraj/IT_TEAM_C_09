@@ -413,15 +413,7 @@ class _FaceRecognitionState extends State<FaceRecognition> {
                         _initializeCamera();
                       }));
                 }
-                //_addLabel();
-                // if (!_hasSpeech || speech.isListening)
-                //   stopListening();
-                // else
-                //   startListening();
-                // print(lastWords + "Hey");
-                //_handle(lastWords.toUpperCase());
-                // _name.clear();
-                //Navigator.pop(context);
+               
               },
               heroTag: null,
             ),

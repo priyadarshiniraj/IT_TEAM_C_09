@@ -11,14 +11,7 @@ import 'models.dart';
 
 enum TtsState { playing, stopped }
 
-/*
-class ObjectDetection extends StatefulWidget{
-  WidgetsFlutterBinding.ensureInitialized();
-
-
-}
-
-*/
+/
 
 class ObjectDetection extends StatefulWidget {
   final List<CameraDescription> cameras;

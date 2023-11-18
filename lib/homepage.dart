@@ -141,63 +141,7 @@ class _HomePageState extends State<HomePage> {
         context,
         MaterialPageRoute(builder: (context) => OCR()),
       );
-    } else if (lastWords.compareTo("send my location") == 0) {
-      Map<String, String> postData = {
-        'latitude': userLocation.latitude.toString(),
-        'longitude': userLocation.longitude.toString()
-      };
-      var url = Uri.parse('https://insightbackend.herokuapp.com/');
-      var response = await http.post(url,
-          body: postData,
-          headers: {
-            "Accept": "*/*",
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          encoding: Encoding.getByName("utf-8"));
-      if (response.statusCode == 200) {
-        tts.speak("Your location co-ordinates are sent successfully.");
-      } else {
-        tts.speak("Sorry. Could not send your location.");
-      }
-    // } else if (lastWords.startsWith("translate")) {
-    //   String sentence = lastWords;
-
-    //   Navigator.push(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => TranslateText(se
-    -.
-    .
-    ntence)),
-    //   );
-
-    // } else if (lastWords.compareTo("video call") == 0) {
-    //   var url = Uri.parse('https://insightbackend.herokuapp.com/token');
-    //   var response = await http.get(
-    //     url,
-    //     headers: {
-    //       'Authorization':
-    //           "Token APP_AUTH_TOKEN"  
-    //       },
-    //   );
-    //   if (response.statusCode == 200) {
-    //     String token = response.body;
-    //     // await for camera and mic permissions before pushing video page
-    //     await _handleCameraAndMic(Permission.camera);
-    //     await _handleCameraAndMic(Permission.microphone);
-    //     Navigator.push(
-    //       context,
-    //       MaterialPageRoute(
-    //           builder: (context) =>
-    //               VideoCall(channelName: "insight", role: _role, token: token)),
-    //     );
-    //   } else {
-    //     tts.speak("Sorry. Could not make a video call.");
-    //   }
-    // } 
-    else {
-      tts.speak("Please provide a valid command");
     }
-  }
 
   Future<void> _handleCameraAndMic(Permission permission) async {
     final status = await permission.request();

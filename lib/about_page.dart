@@ -15,27 +15,13 @@ class AboutPage extends StatefulWidget {
 class _AboutPageState extends State<AboutPage> {
   _AboutPageState();
 
-  // FlutterTts flutterTts;
-  // TtsState ttsState = TtsState.stopped;
-
   @override
   void initState() {
     super.initState();
-    // initTTS();
-    //
-    //
-    // _getVoice("Command Accepted. Translating");
+   
   }
 
-  // void _getVoice(String value) async {
-  //   if (value != null && value.isNotEmpty) {
-  //     if (ttsState != TtsState.playing) {
-  //       var result = await flutterTts.speak(value);
-  //       if (result == 1) setState(() => ttsState = TtsState.playing);
-  //     }
-  //   }
-  // }
-
+  
   @override
   void dispose() {
     super.dispose();
@@ -43,29 +29,7 @@ class _AboutPageState extends State<AboutPage> {
     //flutterTts.stop();
   }
 
-  // initTTS() {
-  //   flutterTts = new FlutterTts();
-  //   flutterTts.setStartHandler(() {
-  //     setState(() {
-  //       print("Playing");
-  //       ttsState = TtsState.playing;
-  //     });
-  //   });
-  //
-  //   flutterTts.setCompletionHandler(() {
-  //     setState(() {
-  //       print("Complete");
-  //       ttsState = TtsState.stopped;
-  //     });
-  //   });
-  //   flutterTts.setCancelHandler(() {
-  //     setState(() {
-  //       print("Cancel");
-  //       ttsState = TtsState.stopped;
-  //     });
-  //   });
-  // }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
